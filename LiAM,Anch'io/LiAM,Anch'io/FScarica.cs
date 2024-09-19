@@ -162,7 +162,7 @@ namespace LiAM_Anch_io
                 if (result == DialogResult.OK)
                 {
                     printDocument.Print();
-                    this.Close(); //chiude le compere
+                    this.Close(); //chiude le compere (esci dal negozio dopo aver comprato)
                 }
             }
         }
@@ -182,9 +182,9 @@ namespace LiAM_Anch_io
             graphic.DrawString("     Liam, Anch'io!", new Font("Courier New", 18), new SolidBrush(Color.Black), startX, startY);
             string top = "Nome".PadRight(30) + "Prezzo";
             graphic.DrawString(top, font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset = offset + (int)fontHeight; //make the spacing consistent
+            offset = offset + (int)fontHeight;
             graphic.DrawString("------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset = offset + (int)fontHeight + 5; //make the spacing consistent
+            offset = offset + (int)fontHeight + 5;
 
             decimal totale = 0;
 
@@ -205,16 +205,16 @@ namespace LiAM_Anch_io
                 offset += (int)fontHeight + 5;
             }
 
-            offset = offset + (int)fontHeight; //make the spacing consistent
+            offset = offset + (int)fontHeight;
             graphic.DrawString("------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset = offset + (int)fontHeight + 5; //make the spacing consistent
+            offset = offset + (int)fontHeight + 5;
 
             if (liamPlus)
                 graphic.DrawString("Totale (Sconto LiamPlus 30%)".PadRight(30) + (totale - (totale*30)/100), new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX, startY + offset);
             else
                 graphic.DrawString("Totale".PadRight(30) + totale, new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX, startY + offset);
 
-            offset = offset + 30; //make some room so that the total stands out.
+            offset = offset + 30; //spaziato
             graphic.DrawString("    Grazie per le sue compere,", font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + 15;
             graphic.DrawString("   Liam si augura di ritrovarti!", font, new SolidBrush(Color.Black), startX, startY + offset);
