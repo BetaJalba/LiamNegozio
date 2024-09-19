@@ -52,11 +52,11 @@ namespace LiAM_Anch_io
                 }
             } 
         }
-        public string Nome { get; set; }
-        public decimal Prezzo { get; set; }
-        public string PathFoto { get; set; }
-        public string Descrizione { get; set; }
-        public int Quantita { get; set; }
+        public string Nome { get; private set; }
+        public decimal Prezzo { get; private set; }
+        public string PathFoto { get; private set; }
+        public string Descrizione { get; private set; }
+        public int Quantita { get; private set; }
 
         public CProdotto()
         {

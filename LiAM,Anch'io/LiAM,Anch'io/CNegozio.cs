@@ -10,18 +10,15 @@ namespace LiAM_Anch_io
     public class CNegozio
     {
         public List<CProdotto> stocked { get; set; }
-        public int serie { get; set; }
         public CNegozio()
         {
             stocked = new List<CProdotto>();
-            serie = 0;
         }
 
         [JsonConstructor]
         public CNegozio(List<CProdotto> stocked, int serie)
         {
             this.stocked = stocked;
-            this.serie = serie;
         }
 
         public void AddProdotto(CProdotto prodotto) 
